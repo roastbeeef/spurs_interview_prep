@@ -1,0 +1,7 @@
+fixture_id,member_id,opponent,kickoff,match_status,hours_until_kickoff,ticket_type,fixture_category,seating_block,exchange_eligible,exchange_cutoff_hours,adult_upgrade_differential_gbp
+FIX-2026-11-07,NB100101,Westbridge United,2026-11-07T15:00:00Z,scheduled,120,Gold Season Seat,Category A,North Stand 104,true,24,0.00
+FIX-2026-11-07,NB100103,Westbridge United,2026-11-07T15:00:00Z,scheduled,111,Gold Season Seat,Category A,West Lower 108,true,24,0.00
+FIX-2026-11-07,NB100105,Westbridge United,2026-11-07T15:00:00Z,scheduled,108,Junior Match Ticket,Category A,East Upper 214,false,24,25.00
+FIX-2026-11-07,NB100108,Westbridge United,2026-11-07T15:00:00Z,scheduled,106,Adult Match Ticket,Category A,South Stand 112,false,24,0.00
+FIX-2026-11-14,NB100111,Harbour Athletic,2026-11-14T15:00:00Z,postponed,0,Gold Season Seat,Category B,West Upper 203,false,24,0.00
+FIX-2026-11-07,NB100114,Westbridge United,2026-11-07T15:00:00Z,scheduled,104,Gold Season Seat,Category A,North Stand 118,true,24,0.00

@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --nb-canvas: #f8fafc;
+  --nb-surface: #ffffff;
+  --nb-surface-subtle: #f1f5f9;
+  --nb-border: #e2e8f0;
+  --nb-border-strong: #cbd5e1;
+  --nb-navy: #0f172a;
+  --nb-navy-soft: #1e293b;
+  --nb-cobalt: #1d4ed8;
+  --nb-cobalt-hover: #1e40af;
+  --nb-ink: #0f172a;
+  --nb-ink-secondary: #334155;
+  --nb-ink-muted: #475569;
+  --nb-ink-subtle: #64748b;
+  --nb-focus: #1d4ed8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--nb-canvas);
+  color: var(--nb-ink);
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Screen-reader only utility */
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+.skip-link:focus-visible {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  background: var(--nb-navy);
+  color: #ffffff;
+  padding: 0.5rem 0.875rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  outline: 3px solid var(--nb-focus);
+  outline-offset: 2px;
+}
+
+/* High-contrast accessible focus ring */
+:where(a:any-link, button, input, select, textarea, summary, [tabindex="0"]):focus-visible {
+  outline: 2px solid var(--nb-focus);
+  outline-offset: 2px;
+}
+
+/* Native <dialog> modal scroll-lock containment */
+dialog {
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--nb-border-strong);
+  border-radius: 10px;
+  background: var(--nb-surface);
+  color: var(--nb-ink);
+  max-width: 600px;
+  width: calc(100% - 2rem);
+  box-shadow: 0 20px 44px rgb(15 23 42 / 0.18);
+}
+
+dialog:modal {
+  overscroll-behavior: contain;
+}
+
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background: rgb(15 23 42 / 0.45);
+}
+
+/* Responsive table wrapper (used for audit/cases ledger modal) */
+.table-wrapper {
+  overflow: auto;
+  max-inline-size: 100%;
+  max-block-size: min(460px, 60vh);
+  container-type: inline-size;
+  border: 1px solid var(--nb-border);
+  border-radius: 8px;
+}
+
+.table-wrapper table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  font-size: 0.8125rem;
+}
+
+.table-wrapper thead {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 1;
+  background: var(--nb-surface-subtle);
+}
+
+.table-wrapper tbody th {
+  position: sticky;
+  inset-inline-start: 0;
+  background: var(--nb-surface);
+}
+
+@container (width < 520px) {
+  .table-wrapper table,
+  .table-wrapper thead,
+  .table-wrapper tbody,
+  .table-wrapper tr,
+  .table-wrapper th,
+  .table-wrapper td {
+    display: block;
+  }
+
+  .table-wrapper thead {
+    display: none;
+  }
+
+  .table-wrapper tbody tr {
+    margin-block-end: 0.75rem;
+    border-bottom: 1px solid var(--nb-border);
+    padding: 0.5rem 0.75rem;
+  }
+
+  .table-wrapper tbody th {
+    position: static;
+    background: transparent;
+  }
+
+  .table-wrapper td::before {
+    content: attr(data-label) ": ";
+    font-weight: 600;
+    color: var(--nb-ink-muted);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (forced-colors: active) {
+  dialog,
+  .nb-surface-panel {
+    border: 1px solid CanvasText;
+  }
+
+  [aria-selected="true"],
+  [aria-current="true"] {
+    outline: 2px solid Highlight;
+  }
+}

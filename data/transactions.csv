@@ -1,0 +1,7 @@
+transaction_id,member_id,timestamp,amount_gbp,currency,description,status,payment_method
+TXN-9101,NB100101,2026-06-18T10:12:00Z,150.00,GBP,Gold Membership Renewal,settled,Visa •••• 4412
+TXN-9201,NB100102,2026-10-26T10:14:11Z,75.00,GBP,Silver Membership Renewal,settled,Visa •••• 4128
+TXN-9202,NB100102,2026-10-26T10:14:19Z,75.00,GBP,Silver Membership Renewal,pending_duplicate_hold,Visa •••• 4128
+TXN-9301,NB100104,2026-06-21T14:05:00Z,75.00,GBP,Silver Membership Renewal,settled,Mastercard •••• 8819
+TXN-9401,NB100106,2025-06-28T09:30:00Z,75.00,GBP,Silver Membership Renewal (2025/26),settled,Visa •••• 7721
+TXN-9501,NB100111,2026-06-15T11:20:00Z,150.00,GBP,Gold Membership Renewal,settled,Mastercard •••• 5501
